@@ -48,5 +48,22 @@ namespace ImageResizer
 
             return count;
         }
+
+        private int CountFilesInFolders(string path, string fileTye)
+        {
+            int count = 0;
+
+            count = Directory.GetFiles(path, fileTye, SearchOption.AllDirectories).Length;
+
+            return count;
+        }
+
+        private bool AreFilsInSubdirectories(string path, string fileTye)
+        {
+            int a = CountFilesInFolder(path, fileTye);
+            int b = CountFilesInFolders(path, fileTye );
+
+            return (a == b);
+        }
     }
 }

@@ -29,13 +29,15 @@
         private void InitializeComponent()
         {
             this.gbxInputFolder = new System.Windows.Forms.GroupBox();
-            this.btnSelectFolder = new System.Windows.Forms.Button();
             this.lblSelectedInputFolder = new System.Windows.Forms.Label();
+            this.btnSelectFolder = new System.Windows.Forms.Button();
             this.gbxInputFolder.SuspendLayout();
             this.SuspendLayout();
             // 
             // gbxInputFolder
             // 
+            this.gbxInputFolder.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.gbxInputFolder.Controls.Add(this.lblSelectedInputFolder);
             this.gbxInputFolder.Controls.Add(this.btnSelectFolder);
             this.gbxInputFolder.Location = new System.Drawing.Point(12, 12);
@@ -44,6 +46,15 @@
             this.gbxInputFolder.TabIndex = 0;
             this.gbxInputFolder.TabStop = false;
             this.gbxInputFolder.Text = "Input folder:";
+            // 
+            // lblSelectedInputFolder
+            // 
+            this.lblSelectedInputFolder.AutoSize = true;
+            this.lblSelectedInputFolder.Location = new System.Drawing.Point(14, 91);
+            this.lblSelectedInputFolder.Name = "lblSelectedInputFolder";
+            this.lblSelectedInputFolder.Size = new System.Drawing.Size(148, 17);
+            this.lblSelectedInputFolder.TabIndex = 1;
+            this.lblSelectedInputFolder.Text = "lblSelectedInputFolder";
             // 
             // btnSelectFolder
             // 
@@ -54,15 +65,6 @@
             this.btnSelectFolder.Text = "Select input folder";
             this.btnSelectFolder.UseVisualStyleBackColor = true;
             this.btnSelectFolder.Click += new System.EventHandler(this.btnSelectFolder_Click);
-            // 
-            // lblSelectedInputFolder
-            // 
-            this.lblSelectedInputFolder.AutoSize = true;
-            this.lblSelectedInputFolder.Location = new System.Drawing.Point(14, 91);
-            this.lblSelectedInputFolder.Name = "lblSelectedInputFolder";
-            this.lblSelectedInputFolder.Size = new System.Drawing.Size(148, 17);
-            this.lblSelectedInputFolder.TabIndex = 1;
-            this.lblSelectedInputFolder.Text = "lblSelectedInputFolder";
             // 
             // Form1
             // 
