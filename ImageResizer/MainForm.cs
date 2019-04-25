@@ -1,19 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ImageResizer
 {
-    public partial class Form1 : Form
+    public partial class MainForm : Form
     {
-        public Form1()
+        public MainForm()
         {
             InitializeComponent();
         }
@@ -40,30 +33,41 @@ namespace ImageResizer
             return path;
         }
 
-        private int CountFilesInFolder(string path, string fileTye)
+        private int CountFilesInFolder(string path, string fileType)
         {
             int count = 0;
 
-            count = Directory.GetFiles(path, fileTye, SearchOption.TopDirectoryOnly).Length;
+            count = Directory.GetFiles(path, fileType, SearchOption.TopDirectoryOnly).Length;
 
             return count;
         }
 
-        private int CountFilesInFolders(string path, string fileTye)
+        private int CountFilesInFolders(string path, string fileType)
         {
             int count = 0;
 
-            count = Directory.GetFiles(path, fileTye, SearchOption.AllDirectories).Length;
+            count = Directory.GetFiles(path, fileType, SearchOption.AllDirectories).Length;
 
             return count;
         }
 
-        private bool AreFilsInSubdirectories(string path, string fileTye)
+        private bool AreFilsInSubdirectories(string path, string fileType)
         {
-            int a = CountFilesInFolder(path, fileTye);
-            int b = CountFilesInFolders(path, fileTye );
+            int a = CountFilesInFolder(path, fileType);
+            int b = CountFilesInFolders(path, fileType);
 
-            return (a == b);
+            return (b > a);
+        }
+
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AboutBox aboutBox = new AboutBox();
+            aboutBox.ShowDialog();
+        }
+
+        private void configurationToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
