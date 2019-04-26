@@ -39,6 +39,8 @@ namespace ImageResizer
 
             count = Directory.GetFiles(path, fileType, SearchOption.TopDirectoryOnly).Length;
 
+            string[] files = Directory.GetFiles(path);
+
             return count;
         }
 
