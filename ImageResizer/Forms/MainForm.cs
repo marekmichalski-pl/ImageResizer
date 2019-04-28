@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data;
 using System.IO;
 using System.Windows.Forms;
 
@@ -40,6 +41,18 @@ namespace ImageResizer
             count = Directory.GetFiles(path, fileType, SearchOption.TopDirectoryOnly).Length;
 
             string[] files = Directory.GetFiles(path);
+
+           
+            DataTable table = new System.Data.DataTable();
+            table.Columns.Add("File Name");
+
+            for (int i = 0; i < files.Length; i++)
+            {
+                FileInfo file = new FileInfo(files[i]);
+                table.Rows.Add(file.Name);
+            }
+
+            dgvFileGrid.DataSource = table;
 
             return count;
         }
