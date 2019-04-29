@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Data;
+using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
 
@@ -45,11 +46,14 @@ namespace ImageResizer
            
             DataTable table = new System.Data.DataTable();
             table.Columns.Add("File Name");
+            table.Columns.Add("Size");
+            table.Columns.Add("Dimension");
 
             for (int i = 0; i < files.Length; i++)
             {
                 FileInfo file = new FileInfo(files[i]);
-                table.Rows.Add(file.Name);
+                
+                table.Rows.Add(file.Name, BytesToString(file.Length), GetImageSize(file.ToString()));
             }
 
             dgvFileGrid.DataSource = table;
@@ -80,9 +84,37 @@ namespace ImageResizer
             aboutBox.ShowDialog();
         }
 
-        private void configurationToolStripMenuItem_Click(object sender, EventArgs e)
+        static string BytesToString(long byteCount)
         {
+            string[] suf = { "B", "KB", "MB", "GB", "TB"}; 
 
+            if (byteCount == 0)
+                return "0" + suf[0];
+
+            long bytes = Math.Abs(byteCount);
+            int place = Convert.ToInt32(Math.Floor(Math.Log(bytes, 1024)));
+            double num = Math.Round(bytes / Math.Pow(1024, place), 2);
+
+            return (Math.Sign(byteCount) * num).ToString() + " " + suf[place];
+        }
+
+        static string GetImageSize(string file)
+        {
+            string s;
+            int height;
+            int width;
+
+            using (var img = Image.FromFile(file))
+            {
+                height = img.Height;
+                width = img.Width;
+            }
+
+           
+           s = width.ToString() + " x " + width.ToString();
+            
+
+            return s;
         }
     }
 }
