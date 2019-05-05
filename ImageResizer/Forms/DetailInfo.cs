@@ -8,17 +8,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ImageResizer.Forms
+namespace ImageResizer
 {
-    public partial class ImageResizer : Form
+    public partial class DetailInfo : Form
     {
-        public ImageResizer(string fileParth)
+        public DetailInfo(string filePath)
         {
             InitializeComponent();
 
-            pictureBox1.Image = new Bitmap("fileParth");
+            Image image = Image.FromFile(filePath);
+            pictureBox1.Image = image;
         }
-
-        
     }
 }

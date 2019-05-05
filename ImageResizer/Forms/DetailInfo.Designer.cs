@@ -1,6 +1,6 @@
-﻿namespace ImageResizer.Forms
+﻿namespace ImageResizer
 {
-    partial class ImageResizer
+    partial class DetailInfo
     {
         /// <summary>
         /// Required designer variable.
@@ -49,14 +49,14 @@
             this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Location = new System.Drawing.Point(3, 13);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(331, 328);
+            this.panel2.Size = new System.Drawing.Size(752, 328);
             this.panel2.TabIndex = 1;
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(35, 37);
+            this.pictureBox1.Location = new System.Drawing.Point(52, 38);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(230, 164);
+            this.pictureBox1.Size = new System.Drawing.Size(568, 263);
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
             // 

@@ -51,9 +51,9 @@ namespace ImageResizer
 
             for (int i = 0; i < files.Length; i++)
             {
-                FileInfo file = new FileInfo(files[i]);
+                FileInfo file = new FileInfo(System.IO.Path.GetDirectoryName(files[i]) + @"\" + Path.GetFileName(files[i]));
                 
-                table.Rows.Add(file.Name, BytesToString(file.Length), GetImageSize(file.ToString()));
+                table.Rows.Add(System.IO.Path.GetDirectoryName(files[i]) + @"\" + Path.GetFileName(files[i]), BytesToString(file.Length), GetImageSize(file.ToString()));
             }
 
             dgvFileGrid.DataSource = table;
@@ -115,6 +115,17 @@ namespace ImageResizer
             
 
             return s;
+        }
+
+        private void dgvFileGrid_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DetailInfo di = new DetailInfo(dgvFileGrid.SelectedCells[0].Value.ToString());
+            di.Show();
+        }
+
+        private void dgvFileGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
