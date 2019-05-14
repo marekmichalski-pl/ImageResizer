@@ -123,9 +123,23 @@ namespace ImageResizer
             di.Show();
         }
 
-        private void dgvFileGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
+        
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            var directories = MetadataExtractor.ImageMetadataReader.ReadMetadata(dgvFileGrid.SelectedCells[0].Value.ToString());
+
+            foreach (var directory in directories)
+            {
+                foreach (var tag in directory.Tags)
+                    Console.WriteLine($"[{directory.Name}] {tag.Name} = {tag.Description}");
+
+                if (directory.HasError)
+                {
+                    foreach (var error in directory.Errors)
+                        Console.WriteLine($"ERROR: {error}");
+                }
+            }
         }
     }
 }

@@ -35,6 +35,7 @@
             this.lblSelectedInputFolder = new System.Windows.Forms.Label();
             this.dgvFileGrid = new System.Windows.Forms.DataGridView();
             this.gbxInputFolder = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFileGrid)).BeginInit();
             this.gbxInputFolder.SuspendLayout();
@@ -100,13 +101,13 @@
             this.dgvFileGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvFileGrid.Size = new System.Drawing.Size(650, 292);
             this.dgvFileGrid.TabIndex = 3;
-            this.dgvFileGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFileGrid_CellContentClick);
             this.dgvFileGrid.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFileGrid_CellDoubleClick);
             // 
             // gbxInputFolder
             // 
             this.gbxInputFolder.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.gbxInputFolder.Controls.Add(this.button1);
             this.gbxInputFolder.Controls.Add(this.dgvFileGrid);
             this.gbxInputFolder.Controls.Add(this.lblSelectedInputFolder);
             this.gbxInputFolder.Controls.Add(this.btnSelectFolder);
@@ -116,6 +117,16 @@
             this.gbxInputFolder.TabIndex = 0;
             this.gbxInputFolder.TabStop = false;
             this.gbxInputFolder.Text = "Input folder:";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(368, 34);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(155, 35);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "Tag Extractor";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // MainForm
             // 
@@ -145,6 +156,7 @@
         private System.Windows.Forms.Label lblSelectedInputFolder;
         private System.Windows.Forms.DataGridView dgvFileGrid;
         private System.Windows.Forms.GroupBox gbxInputFolder;
+        private System.Windows.Forms.Button button1;
     }
 }
 
